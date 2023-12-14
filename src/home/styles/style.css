@@ -1,0 +1,242 @@
+.js-badge {
+  position: fixed;
+  top: 32px;
+  left: 32px;
+  border-radius: 16px;
+  background-color: lightblue;
+  color: black;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.2;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 10000;
+  transition: background-color .1s ease-out;
+}
+
+.js-badge:hover {
+  background-color: rgb(228, 137, 193);
+}
+
+body {
+  background-color: darkgrey;
+}
+
+.banner-canvas {
+  -webkit-mask-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1));
+}
+
+.tooltip {
+  text-decoration: none;
+  position: relative;
+  height: 100vh;
+}
+
+.tooltip span {
+  display: none;
+}
+
+.tooltip:hover span {
+  display: block;
+  position: fixed;
+  overflow: hidden;
+}
+
+.tooltip text {
+  color: #fd6060;
+  font-size: 1rem;
+}
+
+
+@-webkit-keyframes border-transform {
+
+  0%,
+  100% {
+    border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+  }
+
+  14% {
+    border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%;
+  }
+
+  28% {
+    border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%;
+  }
+
+  42% {
+    border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%;
+  }
+
+  56% {
+    border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%;
+  }
+
+  70% {
+    border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%;
+  }
+
+  84% {
+    border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%;
+  }
+}
+
+/* #Progress
+  ================================================== */
+
+.progress-wrap {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  display: block;
+  border-radius: 50px;
+  box-shadow: inset 0 0 0 2px crimson;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+.progress-wrap.active-progress {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.progress-wrap::after {
+  position: absolute;
+  content: '↑';
+  text-align: center;
+  line-height: 46px;
+  font-size: 20px;
+  color: white;
+  /* --- Pijl kleur --- */
+  left: 0;
+  top: 0;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  display: block;
+  z-index: 1;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+.progress-wrap:hover::after {
+  opacity: 0;
+}
+
+.progress-wrap::before {
+  position: absolute;
+  content: '↑';
+  text-align: center;
+  line-height: 46px;
+  font-size: 20px;
+  opacity: 0;
+  background: white;
+  /* --- Pijl hover kleur --- */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  left: 0;
+  top: 0;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  display: block;
+  z-index: 2;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+.progress-wrap:hover::before {
+  opacity: 1;
+}
+
+.progress-wrap svg path {
+  fill: none;
+}
+
+.progress-wrap svg.progress-circle path {
+  stroke: white;
+  /* --- Lijn progres kleur --- */
+  stroke-width: 4;
+  box-sizing: border-box;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+.progress-bar-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* z-index: 9; */
+}
+
+#progress-bar {
+  width: 30%;
+  margin-top: 0.5%;
+  height: 2%;
+  /* z-index: 9; */
+}
+
+label {
+  color: white;
+  font-size: 2rem;
+}
+
+
+/* .cursor .hide {
+  display: default;
+}
+
+.cursor-follower .hide {
+  display: default;
+} */
+
+/* @media only screen and (max-width: 900px) { */
+@media only screen and (max-width: 768px) {
+
+  .cursor {
+    display: none;
+    -webkit-display: none
+  }
+
+  .cursor-follower {
+    display: none;
+    -webkit-display: none
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+
+  #bubble {
+
+    /* width: 30vw;
+    height: 30vw;
+    top: 50%;
+    left: 50%;
+    margin: auto; */
+    touch-action: auto;
+  }
+}
