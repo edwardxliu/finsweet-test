@@ -6,7 +6,6 @@
     "paths": {
       "$utils/*": ["src/utils/*"]
     },
-    "allowJs": true,
     "types": ["@finsweet/ts-utils"]
   }
 }
